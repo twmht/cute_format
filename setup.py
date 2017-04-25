@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='cute_format',
-    version='0.1.0',
+    version='0.1.1',
 
     description='pack data and retrieval in easy way',
     long_description=open('README.rst').read(),
