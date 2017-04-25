@@ -17,7 +17,8 @@ Quick install for debian/ubuntu like linux distributions.
 Quick Usage Guide
 -----------------
 
-.. code-block:: pycon
+.. code-block:: python
+
     from cute.cute_reader import CuteReader
     from cute.cute_writer import CuteWriter
     cw = CuteWriter('tmp')
