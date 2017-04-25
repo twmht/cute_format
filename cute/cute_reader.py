@@ -2,13 +2,13 @@ import os
 import struct
 
 class CuteReader():
-    def __init__(self, path):
+    def __init__(self, path, order='<'):
+        self.order = order
         path_to_index_db = os.path.join(path, 'index.db')
         self.path = path
         self.data_db = open(os.path.join(path, 'data.db'), 'rb')
         self.index_db = open(path_to_index_db, 'rb')
         self._num_data = int(os.stat(path_to_index_db).st_size / 12)
-
 
     @property
     def num_data(self):
@@ -17,11 +17,10 @@ class CuteReader():
     def get(self, index):
         index = (index - 1) * 12
         self.index_db.seek(index)
-        k, size = struct.unpack('<Qi', self.index_db.read(12))
+        k, size = struct.unpack('{0}Qi'.format(self.order), self.index_db.read(12))
         self.data_db.seek(k)
-        byte_object = struct.unpack('<{0}s'.format(size), self.data_db.read(size))[0]
+        byte_object = struct.unpack('{0}{1}s'.format(self.order, size), self.data_db.read(size))[0]
         return byte_object
-
 
     def close(self):
         self.data_db.close()
