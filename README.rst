@@ -30,7 +30,7 @@ Quick Usage Guide
     cr = CuteReader('tmp')
     # get the object by index
     assert cr.num_data == 2
-    byte_object = cr.get(1)
+    byte_object = cr.get(0)
     assert int(byte_object) == a
-    byte_object = cr.get(2)
+    byte_object = cr.get(1)
     assert int(byte_object) == b

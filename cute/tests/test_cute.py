@@ -19,7 +19,7 @@ def test_str_object(cute_writer):
     cute_writer.write(str_object)
     cute_writer.close()
     cr = CuteReader('tmp')
-    byte_object = cr.get(1)
+    byte_object = cr.get(0)
     assert str_object == byte_object
     assert cr.num_data == 1
 
@@ -31,7 +31,7 @@ def test_byte_object(cute_writer):
     cute_writer.close()
     cr = CuteReader('tmp')
     assert cr.num_data == 2
-    byte_object = cr.get(1)
+    byte_object = cr.get(0)
     assert int(byte_object) == a
-    byte_object = cr.get(2)
+    byte_object = cr.get(1)
     assert int(byte_object) == b

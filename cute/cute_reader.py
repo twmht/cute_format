@@ -15,7 +15,7 @@ class CuteReader():
         return self._num_data
 
     def get(self, index):
-        index = (index - 1) * 12
+        index = index * 12
         self.index_db.seek(index)
         k, size = struct.unpack('{0}Qi'.format(self.order), self.index_db.read(12))
         self.data_db.seek(k)
