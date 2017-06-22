@@ -1,1 +1,1 @@
-import cute_reader, cute_writer
+from cute import cute_reader, cute_writer

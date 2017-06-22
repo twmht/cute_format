@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='cute_format',
-    version='0.1.2',
+    version='0.1.3',
 
     description='pack data and retrieval in easy way',
     long_description=open('README.rst').read(),
@@ -12,7 +12,7 @@ setup(
     url='https://github.com/twmht/cute_format',
     license='MIT License',
 
-    packages=['cute', 'cute.tests'],
+    packages=['cute', 'tests'],
 
     setup_requires=['pytest-runner'],
     tests_require=['pytest'],
